@@ -31,11 +31,11 @@ app = FastAPI()
 
 def specific_volume_liquid(P):
     """Calculate specific volume of liquid using polynomial formula."""
-    return round((P + 4.21428) / 4061.2244, 4)
+    return round(((P-0.05)*((0.0035-0.00105)/(10-0.05)) + 0.00105),5)
 
 def specific_volume_vapor(P):
     """Calculate specific volume of vapor using inverse power law."""
-    return round((10.0011609 - P) / 0.331705, 4)
+    return round(((P-0.05)*((0.0035-30)/(10-0.05))+30),5)
 
 
 
